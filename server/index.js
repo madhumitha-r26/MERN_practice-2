@@ -2,7 +2,11 @@ const express=require('express')
 const mongoose=require('mongoose')
 const app=express()
 
-mongoose.connect("mongodb+srv://madhumitha:madhu263@madhu.ugnzz.mongodb.net/crud") //connects the mongodb atlas
+require('dotenv').config(); // load environment variables
+
+
+mongoose.connect(process.env.MONGO_URI) // connects to MongoDB Atlas
+    
 const userSchema=new mongoose.Schema({
         name:String,
         age:Number
@@ -16,6 +20,7 @@ const emp1= new userModel({
 })
 
 emp1.save() //updates in the mongodb atlas
+
 
 app.listen("3001",()=>{
     console.log("SERVER IS RUNNING!!");
