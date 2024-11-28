@@ -2,10 +2,10 @@ const express=require('express')
 const mongoose=require('mongoose')
 const app=express()
 
-require('dotenv').config(); // load environment variables
+require('dotenv').config(); //load environment variables
 
 
-mongoose.connect(process.env.MONGO_URI) // connects to MongoDB Atlas
+mongoose.connect(process.env.MONGO_URI) //connects to MongoDB Atlas
     
 const userSchema=new mongoose.Schema({
         name:String,
